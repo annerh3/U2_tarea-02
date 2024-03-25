@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre&display=swap");
+
+h1{
+    font-family: 'Proza Libre', sans-serif;
+    color:#6C3483 ;
+    font-size: 30px;
+   
+    text-align: center;
+}
+
+h2{
+  font-family: 'Proza Libre', sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+
+.listaNotas_h2 {
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  margin-top: 35px;
+}
+
+.buscarNotaH2 {
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+ 
+  justify-content: center; /* Alinea horizontalmente en el centro */
+  align-items: center; /* Alinea verticalmente al centro */
+  margin-top: -50px;
+}
+
+
+
+
+body{
+    background-image: url('/recursos/fondo.jpg');
+  }
+
+
+  main{
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  /*centrar con respecto al eje x */
+    align-items: center; /*centrar con respecto al eje y */
+  }
+  
+  .crearNota{
+    background-color: #E6B0AA  ;
+    width: 550px; 
+    height: 350px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .SectionBuscarNota{
+    background-color: #bc85e0  ;
+    width: 550px; 
+    height: 350px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .listaNotas{
+    background-color: #d2691e;
+    width: 550px; 
+    height: 350px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   }
+
+  .notasContainer{
+    margin: 20px;
+    overflow-y: auto;
+    background-color: #D67732;
+    width: 70%;
+    text-align: left;
+  }
+
+
+  .notasContainer::-webkit-scrollbar {
+    width: 6px; /* Ancho de la barra de desplazamiento */
+}
+
+.notasContainer::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la pista de la barra de desplazamiento */
+}
+
+.notasContainer::-webkit-scrollbar-thumb {
+    background: #888; /* Color del "pulgón" (el botón deslizante) de la barra de desplazamiento */
+    border-radius: 5px; /* Radio de borde del "pulgón" */
+}
+
+.notasContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cambio de color de la barra al pasar el ratón sobre ella */
+}
+
+
+
+.escribirNota {
+    width: 80%; 
+    height: 150px; 
+    margin-top: 10px; 
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+#escribirNota::placeholder {
+  color: #999; 
+  font-style: italic; 
+  font-family: "Space Grotesk", sans-serif;
+  
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+ .botones button {  /*aplicar estilos a todos los elementos <button> que están dentro de un elemento con la clase '.botones' */
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  margin: 5px; /*espaciado entre botones*/
+}
+
+
+/* COLORES PAR BOTONES */
+.btnEnter {
+  background-color: #4CAF50; 
+}
+
+  .btnEnter:hover {
+    background-color: green; 
+  }
+
+.btnEliminar {
+  background-color: #f44336; 
+}
+
+  .btnEliminar:hover {
+    background-color: #d32f2f; 
+  }
+
+.btnEditar {
+  background-color: #2196F3; 
+}
+
+  .btnEditar:hover {
+    background-color: #1976D2;
+  }
+
+  .btnBuscar{
+    background-color: rgb(185, 144, 40);
+  }
+    .btnBuscar:hover{
+      background-color: darkgoldenrod ;
+    }
+
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: "Space Grotesk", sans-serif;
+  
+}
