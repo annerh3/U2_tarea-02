@@ -1,3 +1,0 @@
-Gestor de Notas: 
-                Desarrollar una aplicación que permita a los usuarios crear, editar y
-                eliminar notas. Utilizar LocalStorage para almacenar las notas creadas por los usuarios.

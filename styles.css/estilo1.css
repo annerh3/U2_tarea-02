@@ -25,7 +25,7 @@ h2{
  
   justify-content: center; /* Alinea horizontalmente en el centro */
   align-items: center; /* Alinea verticalmente al centro */
-  margin-top: -50px;
+  margin-top: -60px;
 }
 
 
@@ -37,7 +37,7 @@ body{
 
 
   main{
-    background-color: brown;
+    
     width: 100%;
     height: 100%;
     display: flex;
@@ -46,7 +46,6 @@ body{
   }
   
   .crearNota{
-    background-color: #E6B0AA  ;
     width: 550px; 
     height: 350px;
     justify-content: center;
@@ -56,8 +55,12 @@ body{
     text-align: center;
   }
 
+  .crearNota:hover{
+    background-color: #887f7f73;
+    transition-duration: 0.4s;
+  }
   .SectionBuscarNota{
-    background-color: #bc85e0  ;
+    
     width: 550px; 
     height: 350px;
     justify-content: center;
@@ -67,8 +70,23 @@ body{
     text-align: center;
   }
 
+  .SectionBuscarNota:hover{
+    background-color: #887f7f73;
+    transition-duration: 0.4s;
+  }
+  
+
+  .buscarNotaTxt{
+    width: 90%;
+
+  }
+  #buscarNotaTxt::placeholder{
+    color: #999; 
+    font-style: italic; 
+    font-family: "Space Grotesk", sans-serif;
+    
+  }
   .listaNotas{
-    background-color: #d2691e;
     width: 550px; 
     height: 350px;
     justify-content: center;
@@ -77,15 +95,23 @@ body{
     align-items: center;
     text-align: center;
    }
-
+.listaNotas:hover{
+  background-color: #887f7f73;
+  transition-duration: 0.4s;
+}
   .notasContainer{
     margin: 20px;
     overflow-y: auto;
-    background-color: #D67732;
-    width: 70%;
+    width: 80%;
+    height: 100%;
     text-align: left;
   }
 
+  .notasContainer:hover{
+    background-color: #887f7f94;
+      transition-duration: 0.4s;
+    
+  }
 
   .notasContainer::-webkit-scrollbar {
     width: 6px; /* Ancho de la barra de desplazamiento */
@@ -149,6 +175,19 @@ body{
   margin: 5px; /*espaciado entre botones*/
 }
 
+#toggleTextarea {
+  display: none; /* Ocultar el checkbox */
+}
+
+#contenedorTextarea {
+  display: none; /* Ocultar el contenedor del textarea */
+}
+
+#toggleTextarea:checked ~ #contenedorTextarea {
+  display: block; /* Mostrar el contenedor del textarea cuando el checkbox está marcado */
+}
+
+
 
 /* COLORES PAR BOTONES */
 .btnEnter {
@@ -166,7 +205,9 @@ body{
   .btnEliminar:hover {
     background-color: #d32f2f; 
   }
-
+  /* .btnEliminar:hover::after {
+    content: "Texto de la pestaña";
+  } */
 .btnEditar {
   background-color: #2196F3; 
 }
@@ -182,7 +223,25 @@ body{
       background-color: darkgoldenrod ;
     }
 
+.btnEliminarTodo{
+  background-color: #e61102; 
+  margin-bottom: 25px;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+  .btnEliminarTodo:hover {
+    background-color: #ff1b0b; 
+  }
 
 footer {
   position: fixed;
