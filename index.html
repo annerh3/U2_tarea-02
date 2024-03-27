@@ -14,7 +14,6 @@
     <br><br><br><br>
     <header> <h1>NoteHub</h1> </header>
 <main>
-
 <!-- CREAR NOTA -->
     <section class="crearNota">
         <h2>Crear Nueva Nota</h2>
@@ -29,26 +28,21 @@
         <h2 class="buscarNotaH2">Administrar Notas</h2><br><br>
         <input type="text" id="buscarNotaTxt" class="buscarNotaTxt" placeholder="Ingresar el número de nota para Administrar. Ejemplo: '1'. Press ENTER para buscar nota." title="Ingresar el número de nota para Administrar. Ejemplo: '1'. Press ENTER para buscar nota.">
         <div class="botones">
-            <button onclick="mostrarContenidoPorIndice()" class="btnBuscar">🔍Buscar Nota</button>
+            <button onclick="mostrarnotasContainerContenidoPorIndice()" class="btnBuscar">🔍Buscar Nota</button>
             <button onclick="eliminarNotaPorIndice()" class="btnEliminar">Eliminar Nota</button>
             <button onclick="editarNota()" class="btnEditar" >Editar Nota</button>
-           
-
         </div>
     </section>
 <!-- LISTA DE NOTAS -->
    <aside class="listaNotas">
         <h2 class="listaNotas_h2">Lista de Notas</h2>
-        <div id="notasContainer" class="notasContainer">
-        </div>
+        <div id="notasContainer" class="notasContainer"></div>
         <aside>
             <button onclick="" id="btnEliminarTodo" class="btnEliminarTodo" title="❌SE ELIMIARÁ TODAS LAS NOTAS.">Eliminar Todo</button>
         </aside>
    </aside>
 </main>
-<script src="/js/app.js"></script>
-
-
+    <script src="/js/app.js"></script>
 <footer>
     &copy; Anner Henriquez - Todos los derechos reservados
 </footer>
