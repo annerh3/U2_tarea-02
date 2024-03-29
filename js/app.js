@@ -15,6 +15,9 @@ function mostrarNotas() {
 // ----------- INICIO SECCION CREAR_NOTA ----------- //
 function guardarNota() 
 {
+  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt");  // limpia el textbox del cuadro del centro
+  inputBuscarNotaTxt.value = '';
+  
   let nota = document.getElementById("escribirNota").value;
     if(nota === ''){
       alert('Caja Vacia. Ingrese texto.')
@@ -26,12 +29,13 @@ function guardarNota()
                                                           notasGuardadas = []; // Inicializar un arreglo vacío si no hay ninguna nota guardada
                                                           } else {
                                                             notasGuardadas = JSON.parse(notasGuardadas);  // Convertir las notas guardadas de JSON a un arreglo
-                                                      }*/
+                                                      }     ESTA PEQUEÑA PARTE DE CODIGO ANTERIOR ES PARA MI APRENDIZAJE/COMPRENCION */
       notasGuardadas.push(nota); // agregar la nueva nota al arreglo de notasGuardadas
       localStorage.setItem("notas", JSON.stringify(notasGuardadas)); // Guardar el arreglo actualizado de notas en el localStorage, convirtiéndolo a formato JSON
-            // Limpiar el campo de entrada para que esté listo para la próxima nota
-        let input = document.getElementById("escribirNota"); 
+      
+        let input = document.getElementById("escribirNota");  // Limpiar el campo de entrada para que esté listo para la próxima nota
         input.value = '';
+        
         alert("Nota Guardada");
         mostrarNotas();
     }
@@ -161,6 +165,9 @@ const btnEliminarTodo = document.getElementById('btnEliminarTodo');
 btnEliminarTodo.addEventListener('click', clickbtnEliminarTodo)
 
 function clickbtnEliminarTodo() {
+  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt");  // limpia el textbox del cuadro del centro
+  inputBuscarNotaTxt.value = '';
+
   let preguntaAlUsuario = parseInt(prompt(`¿Está seguro de eliminar todas las notas? Esto es algo permanente.\n0. NO.\n1. Si.`))
 
       switch (preguntaAlUsuario) 
