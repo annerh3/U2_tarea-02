@@ -1,13 +1,13 @@
 // esta funcion la llamaré (o ya he llamado) en diferentes partes del codigo, para actualizar la lista en cada accción (actualizar la visualización de las notas en la página)
 function mostrarNotas() {  
   let notasContainer = document.getElementById("notasContainer");
-  notasContainer.innerHTML = ''; // limpiar el contenedor antes de agregar las nuevas notas
+  notasContainer.innerHTML = ''; //  se limpia el contenido para asegurarse de que esté vacio antes de agregar las nuevas notas.
 
   let notas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : [];
   notas.forEach((nota, index) => { // Iterar sobre las notas y obtener el índice
       let notaElement = document.createElement("p");
       notaElement.textContent = `Nota ${index + 1}: ${nota}`;
-      notasContainer.appendChild(notaElement);
+      notasContainer.appendChild(notaElement);  // agrega un nuevo elemento como hijo de notasContainer
   });
 }
 
@@ -15,8 +15,8 @@ function mostrarNotas() {
 // ----------- INICIO SECCION CREAR_NOTA ----------- //
 function guardarNota() 
 {
-  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt");  // limpia el textbox del cuadro del centro
-  inputBuscarNotaTxt.value = '';
+  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt"); // ignorar (limpia el textbox del cuadro del centro)
+  inputBuscarNotaTxt.value = ''; // ignorar
   
   let nota = document.getElementById("escribirNota").value;
     if(nota === ''){
@@ -24,18 +24,14 @@ function guardarNota()
     }else{
       // recuperar las notas guardadas del localStorage, o inicializar un arreglo vacio si no hay ninguna nota guardada
       let notasGuardadas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : []; // condición ? valor verdadero : valor falso;
-                                                    /*let notasGuardadas = localStorage.getItem("notas");              
-                                                      if (!notasGuardadas) { // si notasGuardadas es null, undefined, 0, false, NaN, o una cadena de longitud cero (''), entonces !notasGuardadas será true
-                                                          notasGuardadas = []; // Inicializar un arreglo vacío si no hay ninguna nota guardada
-                                                          } else {
-                                                            notasGuardadas = JSON.parse(notasGuardadas);  // Convertir las notas guardadas de JSON a un arreglo
-                                                      }     ESTA PEQUEÑA PARTE DE CODIGO ANTERIOR ES PARA MI APRENDIZAJE/COMPRENCION */
-      notasGuardadas.push(nota); // agregar la nueva nota al arreglo de notasGuardadas
+                          // apartar espacio
+                           // JSON.parse(localStorage.getItem("notas")) = se parsea el JSON devuelto para convertirlo en un objeto JavaScript                                              
+      notasGuardadas.push(nota); 
+
       localStorage.setItem("notas", JSON.stringify(notasGuardadas)); // Guardar el arreglo actualizado de notas en el localStorage, convirtiéndolo a formato JSON
-      
         let input = document.getElementById("escribirNota");  // Limpiar el campo de entrada para que esté listo para la próxima nota
         input.value = '';
-        
+      
         alert("Nota Guardada");
         mostrarNotas();
     }
@@ -70,7 +66,7 @@ function mostrarContenidoPorIndice() // funcion para BUSCAR nota (usando la posi
             let indice = parseInt(notaBuscadaPorUsuario - 1);
             let notas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : [];
 
-            if (indice >= 0 && indice < notas.length) 
+            if (indice >= 0 && indice < notas.length) //verificar si existe esa nota
             {
               let elementoEspecifico = notas[indice];
               alert(`La nota ${notaBuscadaPorUsuario} dice:\n\n "${elementoEspecifico}"`);
@@ -106,10 +102,10 @@ function eliminarNotaPorIndice() // funcion ELIMINAR una nota en especifica (usa
 
                     let notas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : [];
                     if (indice >= 0 && indice < notas.length) 
-                    {   notas.splice(indice, 1); // eliminar el elemento específico del arreglo utilizando el metodo splice  [  .splice(indice,numero de elementos despues del indice)   ]
+                    {   notas.splice(indice, 1); // eliminar el elemento específico del arreglo utilizando el metodo splice  [  .splice(indice, numero de elementos despues del indice)   ]
                         
                         localStorage.setItem("notas", JSON.stringify(notas)); // guardar el arreglo actualizado en el localStorage
-                        console.log("Elemento en el índice", indice, "eliminado correctamente.");
+                        
                         alert(`La nota ${notaAEliminar} fue eliminada correctamente. Presione OK para actualizar lista.`)
                         mostrarNotas();
                         return;
@@ -165,7 +161,7 @@ const btnEliminarTodo = document.getElementById('btnEliminarTodo');
 btnEliminarTodo.addEventListener('click', clickbtnEliminarTodo)
 
 function clickbtnEliminarTodo() {
-  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt");  // limpia el textbox del cuadro del centro
+  let inputBuscarNotaTxt = document.getElementById("buscarNotaTxt");  // ignorar (limpia el textbox del cuadro del centro)
   inputBuscarNotaTxt.value = '';
 
   let preguntaAlUsuario = parseInt(prompt(`¿Está seguro de eliminar todas las notas? Esto es algo permanente.\n0. NO.\n1. Si.`))
