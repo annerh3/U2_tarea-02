@@ -98,19 +98,15 @@ function eliminarNotaPorIndice() // funcion ELIMINAR una nota en especifica (usa
       let preguntaAlUsuario = parseInt(prompt(`¿Está seguro de eliminar esta nota?\n0. NO.\n1. Si.`))
 
       switch (preguntaAlUsuario) 
-        {  case 1:   const indice = parseInt(notaAEliminar-1); // convrtir la nota a eliminar a un numero entero (-1 para coincidir con lo que hay en html)
-
-                    let notas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : [];
-                    if (indice >= 0 && indice < notas.length) 
-                    {   notas.splice(indice, 1); // eliminar el elemento específico del arreglo utilizando el metodo splice  [  .splice(indice, numero de elementos despues del indice)   ]
-                        
-                        localStorage.setItem("notas", JSON.stringify(notas)); // guardar el arreglo actualizado en el localStorage
-                        
-                        alert(`La nota ${notaAEliminar} fue eliminada correctamente. Presione OK para actualizar lista.`)
-                        mostrarNotas();
-                        return;
-                    }
-                      break;
+        {  case 1:   
+                  let notas = localStorage.getItem("notas") ? JSON.parse(localStorage.getItem("notas")) : [];
+                  notas.splice(indice, 1); // eliminar el elemento específico del arreglo utilizando el metodo splice  [  .splice(indice, numero de elementos despues del indice)   ]
+                      
+                  localStorage.setItem("notas", JSON.stringify(notas)); // guardar el arreglo actualizado en el localStorage
+                  
+                  alert(`La nota ${notaAEliminar} fue eliminada correctamente. Presione OK para actualizar lista.`)
+                  mostrarNotas();
+                  break;
           case 0: alert("Cancelado...")
                   break;
           default: alert('Opción no válida.');
